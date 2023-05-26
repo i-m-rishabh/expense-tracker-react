@@ -1,12 +1,16 @@
 import './ExpenseItem.css';
 function ExpenseItem(props) {
+    const date = props.date;
+    const description = props.description;
+    const price = props.price;
+    const location = props.location;
     return (
         <div className="expense-item">
-            <div>May 26th 2023</div>
+            <div>{date}</div>
             <div className="expense-item__description">
-                <h2>Car Insurance</h2>
-                <div className="expense-item__price">$300.56</div>
-                <div className='expense-item__location'>prayagraj</div>
+                <h2>{description}</h2>
+                <div className="expense-item__price">${price}</div>
+                <div className='expense-item__location'>{location}</div>
             </div>
         </div>
     )
