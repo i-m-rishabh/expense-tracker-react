@@ -6,6 +6,9 @@ function ExpenseItem(props) {
     const amount = props.amount;
     const title = props.title;
     const location = props.location;
+    const handleDelete = () => {
+        console.log('deleted');
+    }
     return (
         <Card className="expense-item">
             <ExpenseDate
@@ -16,6 +19,7 @@ function ExpenseItem(props) {
                 title={title}
                 location={location}
             />
+            <button onClick={handleDelete}>Delete</button>
         </Card>
     )
 }
