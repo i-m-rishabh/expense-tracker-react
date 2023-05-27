@@ -1,3 +1,4 @@
+
 function ExpenseDetails({ amount, location, title }) {
     return (
         <div className="expense-item__description">
