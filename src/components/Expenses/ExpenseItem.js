@@ -8,8 +8,8 @@ function ExpenseItem(props) {
     const [amount, setAmount] = useState(props.amount);
     // let  title = props.title;
     const location = props.location;
-    const [title, setTitle] = useState(props.title);
-
+    // const [title, setTitle] = useState(props.title);
+    const title = props.title;
     const handleClick = () => {
         setAmount(amount+100);
     }
