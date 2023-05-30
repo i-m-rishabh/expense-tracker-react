@@ -1,8 +1,9 @@
 import './ExpenseDate.css';
 function ExpenseDate(props){
-    const month = props.date.toLocaleString('defaul',{month:'long'});
-    const year = props.date.toLocaleString('default',{year:'numeric'});
-    const day = props.date.toLocaleString('default',{day:'numeric'});
+     const date = new Date(props.date);
+    const month = date.toLocaleString('defaul',{month:'long'});
+    const year = date.toLocaleString('default',{year:'numeric'});
+    const day = date.toLocaleString('default',{day:'numeric'});
     
     return(
         <div className='expense-date'>
