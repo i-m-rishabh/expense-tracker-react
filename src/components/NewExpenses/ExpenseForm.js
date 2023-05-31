@@ -2,6 +2,8 @@ import './ExpenseForm.css';
 import {useState} from 'react';
 
 const ExpenseForm = (props) =>{
+    const [addExpense, setAddExpense] = useState(false);
+
     const [enteredTitle, setTitle] = useState(''); 
     const [enteredAmount, setAmount] = useState(''); 
     const [enteredDate, setDate] = useState(new Date()); 
@@ -27,7 +29,14 @@ const ExpenseForm = (props) =>{
         setAmount(0);
         setDate('');
         setTitle('');
+        setAddExpense(false);
     }
+    if(addExpense === false){
+        return <>
+        <button onClick={()=>{setAddExpense(true)}}>Add Expense</button>
+        </> 
+    }
+    
 
     return(
         <form onSubmit={formSubmitHandler}>
@@ -47,6 +56,7 @@ const ExpenseForm = (props) =>{
             </div>
             <div className="new-expense__actions">
                 <button type='submit'>Add Expense</button>
+                <button onClick={()=>{setAddExpense(false)}}>Cancel</button>
             </div>
         </form>
     )
