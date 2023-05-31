@@ -4,25 +4,22 @@ import {useState} from 'react';
 const ExpenseForm = (props) =>{
     const [enteredTitle, setTitle] = useState(''); 
     const [enteredAmount, setAmount] = useState(''); 
-    const [enteredDate, setDate] = useState(''); 
+    const [enteredDate, setDate] = useState(new Date()); 
     function titleChangeHandler(event){
-        // console.log(event.target.value);
         setTitle(event.target.value);
     }
     function amountChangeHandler(event){
-        // console.log(event.target.value);
         setAmount(event.target.value);
     }
     function dateChangeHandler(event){
-        // console.log(event.target.value);
-        setDate((event.target.value));
+        setDate(event.target.value);
     }
     function formSubmitHandler(event){
         event.preventDefault();
         const expenseData = {
             title: enteredTitle,
             amount: enteredAmount,
-            date: enteredDate            
+            date: new Date(enteredDate)            
         };
         // console.log(expenseData);
         props.onAddExpenseData(expenseData);
@@ -45,7 +42,7 @@ const ExpenseForm = (props) =>{
                 </div>
                 <div className="new-expense__control">
                     <label>Date</label>
-                    <input type='date' min="2023-05-01" value={enteredDate} onChange={dateChangeHandler} />
+                    <input type='date' value={enteredDate} onChange={dateChangeHandler} />
                 </div>
             </div>
             <div className="new-expense__actions">
