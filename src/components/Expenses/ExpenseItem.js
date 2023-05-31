@@ -11,7 +11,7 @@ function ExpenseItem(props) {
     // const [title, setTitle] = useState(props.title);
     const title = props.title;
     const handleClick = () => {
-        setAmount(amount+100);
+        setAmount(amount+100.00);
     }
     
 
